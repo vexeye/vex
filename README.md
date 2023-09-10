@@ -3,7 +3,11 @@
 ## Functions
 
 ```
-TBD
+fn name(p1: ParamType1, p2: ParamType2, ...) -> ReturnType {
+    // Function body
+    // ...
+    return returnValue;
+}
 ```
 
 ## Structures
