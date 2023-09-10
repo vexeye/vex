@@ -30,10 +30,27 @@ name({
 })
 ```
 
-## Structures
+## Blueprints
 
 ```
-TBD
+bp BlueprintName(&self) {
+# public
+    field1: FieldType1
+    field2: FieldType2
+    // ...
+
+    constructor(p: BlueprintNameProps) {
+        // Constructor implementation
+    }
+
+    fn method1(p1: ParamType1) -> ReturnType1 {
+        // Method implementation
+    }
+
+    fn method2(p2: ParamType2) -> ReturnType2 {
+        // Method implementation
+    }
+}
 ```
 
 ## Data types
