@@ -53,6 +53,97 @@ bp BlueprintName(&self) {
 }
 ```
 
+### Access modifiers
+
+Access modifiers with zero runtime overhead, compile time memory alignment and performance optimizations.
+
+By design there are 2 ways of looking at access modifiers.
+
+- > Implicit - All fields and methods are public my default
+- > Explicit - Granularly group related fields in a vertical manner
+
+```
+// Implcit
+bp Parent(&self) {
+// All fields are public
+    fullName: String
+    bankAccount: String
+    skeletsInTheCloset: String
+}
+
+// Explicit
+bp Parent(&self) {
+// Grouped with visibility decorator
+# @Visible
+    fullName: String
+# @Inherited
+    bankAccount: String
+# @Hidden
+    skeletsInTheCloset: String
+}
+```
+
+### Coupling
+
+In Vexx there are two ways of coupling.
+
+- Strict via inheritance
+- Loose via composition
+
+#### Inheritance
+
+Inheritance is done by using the `:` symbol between the `Child` and the `Parent(s)`
+
+> ℹ️ When using inheritance, all the properties of the parents would be accessible or in other words, merged, in the `&self` reference.
+
+```
+// Single parent
+bp Child(&self) : Parent {
+    fieldName: String
+
+    constructor(props: BlueprintNameProps) {
+        log`&self.bankAccount`
+    }
+}
+
+// Many parents
+bp Child(&self) : [Parent1, Parent2] {
+    fieldName: String
+
+    constructor(props: BlueprintNameProps) {
+        log`&self.bankAccount`
+    }
+}
+```
+
+#### Composition
+
+Composition is done by using the `~` symbol between the `Child` and the `Sibling(s)`
+
+> ℹ️ When connected to a blueprint, the sibling object will be injected into the `&self` reference and the name would be the camelCase version of the blueprint itself.
+
+```
+// Single sibling
+bp Child(&self) ~ Sibling {
+    fieldName: String
+
+    constructor(props: BlueprintNameProps) {
+        log`&self.sibling.anotherField`
+    }
+}
+
+// Many siblings
+bp Child(&self) ~ [Sibling1, Sibling2] {
+    fieldName: String
+
+    constructor(props: BlueprintNameProps) {
+        log`&self.sibling1.toy1`
+        log`&self.sibling2.toy2`
+    }
+}
+
+```
+
 ## Data types
 
 ```
