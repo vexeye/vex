@@ -45,7 +45,13 @@ fn main() {
     // Symbol type with backtick delimiters
     let symbolValue: Symbol = @`Symbol`
 
-    // Type type
+    // 4. Unexpected behavior
+    let null: Null
+    let void: Void
+    let error: Error
+    let exception: Exception
+
+    // 5. Generics
     let type: Type
 
     // Your code goes here
