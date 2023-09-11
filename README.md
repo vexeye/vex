@@ -8,15 +8,21 @@ fn main() {
     let isTrue: Bool = true
     let isFalse: Bool = false
 
-    // Byte type
-    let byteValue: Byte = 42
+    // Numbers
+    let n: Number = 100
+    // 👇 Number is a generic, dynamic type encapsulating any number
+    let bitValue: Bit = 1
+    let int8Value: I8 = 127
+    let int16Value: I16 = 32767
+    let int32Value: I32 = 2147483647
+    let int64Value: I64 = 9223372036854775807
+    let unsignedInt8Value: U8 = 256
+    let unsignedInt16Value: U16 = 65536
+    let unsignedInt32Value: U32 = 4294967294
+    let unsignedInt64Value: U64 = 9223372036854775807
+    let numberInRange: Number({ range: 1...500 }) = 499
 
-    // Integer types
-    let int8Value: Int8 = 127
-    let int16Value: Int16 = 32767
-    let int32Value: Int32 = 2147483647
-    let int64Value: Int64 = 9223372036854775807
-
+    // Characters
     // Char type with backtick delimiters
     let charValue: Char = `A`
 
@@ -25,6 +31,9 @@ fn main() {
 
     // Symbol type with backtick delimiters
     let symbolValue: Symbol = @`Symbol`
+
+    // Type type
+    let type: Type
 
     // Your code goes here
 }
