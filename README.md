@@ -34,7 +34,6 @@ name({
 
 ```
 bp BlueprintName(&self) {
-# public
     field1: FieldType1
     field2: FieldType2
     // ...
