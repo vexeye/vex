@@ -1,5 +1,35 @@
 # vexx
 
+## Data types
+
+```
+fn main() {
+    // Bool type
+    let isTrue: Bool = true
+    let isFalse: Bool = false
+
+    // Byte type
+    let byteValue: Byte = 42
+
+    // Integer types
+    let int8Value: Int8 = 127
+    let int16Value: Int16 = 32767
+    let int32Value: Int32 = 2147483647
+    let int64Value: Int64 = 9223372036854775807
+
+    // Char type with backtick delimiters
+    let charValue: Char = `A`
+
+    // String type with backtick delimiters
+    let stringValue: String = `Hello, world!`
+
+    // Symbol type with backtick delimiters
+    let symbolValue: Symbol = @`Symbol`
+
+    // Your code goes here
+}
+```
+
 ## Functions
 
 All functions receive only one parameter. 
@@ -100,7 +130,7 @@ Inheritance is done by using the `:` symbol between the `Child` and the `Parent(
 bp Child(&self) : Parent {
     fieldName: String
 
-    constructor(props: BlueprintNameProps) {
+    constructor(props: ChildProps) {
         log`&self.bankAccount`
     }
 }
@@ -109,7 +139,7 @@ bp Child(&self) : Parent {
 bp Child(&self) : [Parent1, Parent2] {
     fieldName: String
 
-    constructor(props: BlueprintNameProps) {
+    constructor(props: ChildProps) {
         log`&self.bankAccount`
     }
 }
@@ -126,7 +156,7 @@ Composition is done by using the `~` symbol between the `Child` and the `Sibling
 bp Child(&self) ~ Sibling {
     fieldName: String
 
-    constructor(props: BlueprintNameProps) {
+    constructor(props: ChildProps) {
         log`&self.sibling.anotherField`
     }
 }
@@ -135,7 +165,7 @@ bp Child(&self) ~ Sibling {
 bp Child(&self) ~ [Sibling1, Sibling2] {
     fieldName: String
 
-    constructor(props: BlueprintNameProps) {
+    constructor(props: ChildProps) {
         log`&self.sibling1.toy1`
         log`&self.sibling2.toy2`
     }
@@ -143,34 +173,5 @@ bp Child(&self) ~ [Sibling1, Sibling2] {
 
 ```
 
-## Data types
-
-```
-fn main() {
-    // Bool type
-    let isTrue: Bool = true
-    let isFalse: Bool = false
-
-    // Byte type
-    let byteValue: Byte = 42
-
-    // Integer types
-    let int8Value: Int8 = 127
-    let int16Value: Int16 = 32767
-    let int32Value: Int32 = 2147483647
-    let int64Value: Int64 = 9223372036854775807
-
-    // Char type with backtick delimiters
-    let charValue: Char = `A`
-
-    // String type with backtick delimiters
-    let stringValue: String = `Hello, world!`
-
-    // Symbol type with backtick delimiters
-    let symbolValue: Symbol = @`Symbol`
-
-    // Your code goes here
-}
-```
 
 ## Control flow
