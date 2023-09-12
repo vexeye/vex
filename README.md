@@ -144,8 +144,8 @@ bp Parent(&self) {
 
 In Vexx there are two ways of coupling.
 
-- Strict via inheritance
-- Loose via composition
+- Strict via blueprint inheritance
+- Loose via dependency injection
 
 #### Inheritance
 
@@ -173,9 +173,9 @@ bp Child(&self) : [Parent1, Parent2] {
 }
 ```
 
-#### Composition
+#### Dependency injection
 
-Composition is done by using the `~` symbol between the `Child` and the `Sibling(s)`
+Dependency injection is done by using the `~` symbol between the `Child` and the `Sibling(s)`
 
 > ℹ️ When connected to a blueprint, the sibling object will be injected into the `&self` reference and the name would be the camelCase version of the blueprint itself.
 
