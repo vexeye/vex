@@ -88,7 +88,7 @@ name({
 })
 ```
 
-### Synchronous functions
+### General purpose functions
 
 #### Lamda functions
 
