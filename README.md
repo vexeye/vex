@@ -133,7 +133,7 @@ bp Parent(&self) {
 // Grouped with visibility decorator
 # @Visible
     fullName: String
-# @Inherited
+# @Inherit
     bankAccount: String
 # @Hidden
     skeletsInTheCloset: String
