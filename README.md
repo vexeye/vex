@@ -71,7 +71,7 @@ This is enforced for various reasons.
 - Optional Parameters: It's easy to make parameters optional by not including them in the object if they are not needed for a particular call. This can simplify function calls.
 - Reduced Function Signature Complexity: Using a single parameter object can help keep the function signature simple, especially when there are many parameters.
 
-All of this with zero runtime overhead
+All of this with zero runtime overhead.
 
 ```
 // Definition
@@ -86,6 +86,62 @@ name({
   id: `1234`
   value: `Value`
 })
+```
+
+### Synchronous functions
+
+#### Lamda functions
+
+Anonymous lamda functions are short-lived functions that can be defined only under a certain context, such as a callback for another function.
+
+```
+object.map((p: T): ReturnType => {
+  // Function body
+})
+```
+
+#### Named functions
+
+```
+// Declaration & Definition
+fn example(p: T): ReturnType => {
+  // Function body
+}
+
+// Usage
+example({})
+```
+
+
+### Asynchronous functions
+
+Async functions return a promise to be delivered, when called, they are not blocking the further execution no matter how long the main thread has to await for the result to come.
+
+#### Continuous async function
+```
+// Declaration & Definition
+fn example(p: T): ReturnType |> {
+  // Function body
+}
+
+// Usage
+await example()
+```
+
+### Pausable / Cancellable async function
+
+```
+// Declaration & Definition
+fn example(p: T): ReturnType ||> {
+  // Function body
+}
+
+// Usage
+const promise = await example().next()
+
+await promise.next()
+await promise.pause()
+await promise.cancel()
 ```
 
 ## Blueprints
