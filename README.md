@@ -75,7 +75,7 @@ All of this with zero runtime overhead
 
 ```
 // Definition
-fn name(p: ParamType) -> ReturnType {
+fn name(p: ParamType) => ReturnType {
     // Function body
     // ...
     return returnValue
@@ -100,11 +100,11 @@ bp BlueprintName(&self) {
         // Constructor implementation
     }
 
-    fn method1(p1: ParamType1) -> ReturnType1 {
+    fn method1(p1: ParamType1) => ReturnType1 {
         // Method implementation
     }
 
-    fn method2(p2: ParamType2) -> ReturnType2 {
+    fn method2(p2: ParamType2) => ReturnType2 {
         // Method implementation
     }
 }
