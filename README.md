@@ -88,17 +88,7 @@ name({
 })
 ```
 
-### General purpose functions
-
-#### Lamda functions
-
-Anonymous lamda functions are short-lived functions that can be defined only under a certain context, such as a callback for another function.
-
-```
-object.map((p: T): ReturnType => {
-  // Function body
-})
-```
+### Syncronous functions
 
 #### Named functions
 
@@ -110,6 +100,21 @@ fn example(p: T): ReturnType => {
 
 // Usage
 example({})
+```
+
+#### Decorator functions
+
+Decorator functions are used to decorate any existing building block given it passes the prerequisite validaitions.
+
+```
+fn Component(p: T): ReturnType @> {
+  // return the extended object
+}
+
+@Component({ styles: `./another.css` })
+fn another() => {
+  // Do something
+}
 ```
 
 
@@ -142,6 +147,29 @@ const promise = await example().next()
 await promise.next()
 await promise.pause()
 await promise.cancel()
+```
+
+
+### General purpose functions
+
+#### Lamda functions
+
+Anonymous lamda functions are short-lived functions that can be defined only under a certain context, such as a callback for another function.
+
+They can be one of types:
+- Syncronous
+- Asynchronous
+
+```
+// Syncronous
+object.map((p: T): ReturnType => {
+  // Function body
+})
+
+// Asynchronous
+object.map((p: T): ReturnType |> {
+  // Function body
+})
 ```
 
 ## Blueprints
@@ -229,9 +257,9 @@ bp Child(&self) : [Parent1, Parent2] {
 }
 ```
 
-#### Dependency injection
+#### Dependency composition
 
-Dependency injection is done by using the `~` symbol between the `Child` and the `Sibling(s)`
+Dependency composition is done by using the `~` symbol between the `Child` and the `Sibling(s)`
 
 > ℹ️ When connected to a blueprint, the sibling object will be injected into the `&self` reference and the name would be the camelCase version of the blueprint itself.
 
