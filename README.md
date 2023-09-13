@@ -162,6 +162,12 @@ let error: Error
 ```
 let type: Type
 ```
+
+## Generic types, traits
+
+TBD
+
+
 ## Functions
 
 All functions receive only one parameter. 
@@ -404,8 +410,6 @@ bp BlueprintName(&self) {
 // Usage
 BlueprintName::method() // 👈 The call to a static method is done via `::`
 ```
-
-
 
 ### Access modifiers
 
