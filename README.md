@@ -676,3 +676,15 @@ bp Child(&self) ~ [Sibling1, Sibling2] {
     }
 }
 ```
+
+## Enums
+
+```
+TBD
+```
+
+## Aliases
+
+```
+TBD
+```
