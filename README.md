@@ -289,12 +289,12 @@ bp Parent(&self) {
 
 In Vexx there are two ways of coupling.
 
-- Strict via blueprint inheritance
-- Loose via dependency injection
+- Strict via blueprint parent inheritance
+- Loose via blueprint dependency composition
 
-#### Inheritance
+#### Parent Inheritance
 
-Inheritance is done by using the `:` symbol between the `Child` and the `Parent(s)`
+Parent Inheritance is done by using the `:` symbol between the `Child` and the `Parent(s)`
 
 > ℹ️ When using inheritance, all the properties of the parents would be accessible or in other words, merged, in the `&self` reference.
 
