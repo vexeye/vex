@@ -17,6 +17,70 @@ The priority for the entrypoint of an application or library goes as follows:
 - Multiple `main.x` files are prohibited per one single application, library.
 - Multiple `main` functions are prohibited per one single application, library.
 
+## Literal language
+
+Vexx is a highly literal language with an emphasis on keeping the balance between readability, consistency and developer experience & ergonomics without sacrificing compilation or runtime speed of the produced applications & libraries.
+
+### Comments
+
+#### Inline
+
+```
+// This is an inline comment.
+
+// ! This is a highly important inline comment.
+
+// ? This is an optional, question-like comment.
+
+// @Decorator can be used in an inline comment to enchance it.
+
+/// This is comment that will be available in the generated docs.
+```
+
+#### Multi-line
+
+```
+/**
+* This is a multi-line comment.
+*/
+
+/**
+* This is a multi-line comment with decorators.
+* @See https://vexxlang.com
+*/
+
+/**
+* This is a chonky multi-line comment with multiple Vexxdoc decorators.
+* @Author Reanimated Man X <mail@rmx.codes> / Alexei Gaidulean
+* @See https://vexxlang.com
+*/
+```
+
+### Comment section
+
+Section comments are use to group related code together for easier, digestible reading.
+
+Section comments can be then collapsed/expanded by the IDE, while simple comments can not.
+
+```
+// any.x
+
+# Title commentary
+
+## Sub-section commentary
+
+fn doSomething(): T => {
+  // Implementation
+}
+
+# Title commentary 2
+
+## Sub-section commentary 2
+
+fn doSomethingNasty(): T => {
+  // Implementation
+}
+```
 
 ## Data types
 
