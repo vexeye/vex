@@ -7,6 +7,17 @@
 say`Hello, World!`
 ```
 
+## Entrypoint priority
+
+The priority for the entrypoint of an application or library goes as follows:
+
+1. `main.x`
+2. An `fn main() -> {}` impure function in any file with this name
+
+- Multiple `main.x` files are prohibited per one single application, library.
+- Multiple `main` functions are prohibited per one single application, library.
+
+
 ## Data types
 
 ## Logical
