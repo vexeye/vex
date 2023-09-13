@@ -303,25 +303,27 @@ Access modifiers with zero runtime overhead, compile time memory alignment and p
 
 By design there are 2 ways of looking at access modifiers.
 
-- > Implicit - All fields and methods are public my default
-- > Explicit - Granularly group related fields in a vertical manner
+#### Implcit
 
+All fields and methods are visible to the consumers by default
 ```
-// Implcit
 bp Parent(&self) {
-// All fields are public
     fullName: String
-    bankAccount: String
+    bankCredentials: String
     skeletsInTheCloset: String
 }
+```
 
-// Explicit
+#### Explicit
+
+Fields and methods are granularly grouped in a vertical manner
+
+```
 bp Parent(&self) {
-// Grouped with visibility decorator
 # @Visible
     fullName: String
 # @Inherit
-    bankAccount: String
+    bankCredentials: String
 # @Hidden
     skeletsInTheCloset: String
 }
