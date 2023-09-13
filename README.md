@@ -2,6 +2,11 @@
 
 Vexx, a general purpose highly opinionated, high performance, universal code language with an emphasis on code literacy, readability, maintainability, consistency and developer experience & ergonomics. All this without sacrificing compilation or runtime speed of the produced applications & libraries.
 
+## Getting started
+
+1. Install `vexx` cli
+2. Run `vexx create app`
+
 ## Hello world
 
 ```
