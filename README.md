@@ -233,6 +233,34 @@ F::merge()
 
 ```
 
+## Decorators
+
+Decorators are functional blueprints to vertically extend other building blocks.
+
+```
+dc DecoratorName(&self) {
+    let new: T = `Something`
+
+    constructor(props: DecoratorNameProps) {
+       // Do something
+    }
+}
+
+@DecoratorName({
+    bColoredLog: true
+})
+fn someFunction() => {
+    // Implementation
+}
+
+@DecoratorName({
+   bColoredLog: true
+})
+bp BlueprintName(&self) {
+    // Implementation
+}
+```
+
 ## Blueprints
 
 ```
