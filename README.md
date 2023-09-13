@@ -1,5 +1,12 @@
 # vexx
 
+## Hello world
+
+```
+// main.x
+say`Hello, World!`
+```
+
 ## Data types
 
 ## Logical
