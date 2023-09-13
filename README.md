@@ -2,62 +2,84 @@
 
 ## Data types
 
+## Logical
+
 ```
-fn main() {
-    // 1. Bool type
-    let bFalse: Bool = true
-    let bFalse: Bool = false
+let bFalse: Bool = true
+let bFalse: Bool = false
 
-    // 2. Numbers
-    let v = 1
-    let value: Number = 1
-    let bitValue: Bit = 1
-    let int8Value: I8 = 127
-    let int16Value: I16 = 32767
-    let int32Value: I32 = 2147483647
-    let int64Value: I64 = // ...
-    let int128Value: I64 = 9223372036854775807
-
-    // Unsigned
-    let unsignedInt8Value: uI8 = 256
-    let unsignedInt16Value: uI16 = 65536
-    let unsignedInt32Value: uI32 = 4294967294
-    let unsignedInt64Value: uI64 = 9223372036854775807
-
-    // Floats
-    let int8Value: F16 = 1.0  // 16-bit floating point (10-bit mantissa) IEEE-754-2008 binary16
-    let int8Value: F32 = 1.0  // 32-bit floating point (23-bit mantissa) IEEE-754-2008 binary32
-    let int8Value: F64 = 1.0  // 64-bit floating point (52-bit mantissa) IEEE-754-2008 binary64
-    let int8Value: F80 = 1.0  // 80-bit floating point (64-bit mantissa) IEEE-754-2008 80-bit extended precision
-    let int8Value: F128 = 1.0 // 128-bit floating point (112-bit mantissa) IEEE-754-2008 binary128
-
-    // Special
-    let numberInRange: Number({ range: 1...500 }) = 499
-
-    // 3. Characters
-
-    // Char type with backtick delimiters
-    let charValue: Char = `A`
-
-    // String type with backtick delimiters
-    let stringValue: String = `Hello, world!`
-
-    // Symbol type with backtick delimiters
-    let symbolValue: Symbol = @`Symbol`
-
-    // 4. Unexpected behavior
-    let null: Null
-    let void: Void
-    let error: Error
-    let exception: Exception
-
-    // 5. Generics
-    let type: Type
-
-    // Your code goes here
-}
 ```
 
+## Numbers
+
+```
+// Real
+let v = 1 // Number
+let value: Number = 1
+let bitValue: Bit = 1
+
+let int8Value: I8 = 127
+let unsignedInt8Value: uI8 = 256
+
+let int16Value: I16 = 32767
+let unsignedInt16Value: uI16 = 65536
+
+let int32Value: I32 = 2147483647
+let unsignedInt32Value: uI32 = 4294967294
+
+let int64Value: I64 = // ...
+let unsignedInt64Value: uI64 =// ...
+
+let int128Value: I128 = // ...
+let unsignedInt128Value: I128 = // ...
+
+// Floats
+let int8Value: F16 = 1.0  // 16-bit floating point (10-bit mantissa) IEEE-754-2008 binary16
+let int8Value: F32 = 1.0  // 32-bit floating point (23-bit mantissa) IEEE-754-2008 binary32
+let int8Value: F64 = 1.0  // 64-bit floating point (52-bit mantissa) IEEE-754-2008 binary64
+let int8Value: F80 = 1.0  // 80-bit floating point (64-bit mantissa) IEEE-754-2008 80-bit extended precision
+let int8Value: F128 = 1.0 // 128-bit floating point (112-bit mantissa) IEEE-754-2008 binary128
+
+// Special
+let numberInRange: Number({ range: 1...500 }) = 499
+```
+
+## Characters
+
+```
+// Char type with backtick delimiters
+let charValue: Char = `A`
+
+// String type with backtick delimiters
+let stringValue: String = `Hello, world!`
+
+// Symbol type with backtick delimiters
+let symbolValue: Symbol = @`Symbol`
+```
+
+## Special cases
+
+```
+let void: Void
+let null: Null
+
+let required: Required
+let optional: Optional
+
+let returnable: Returnable
+let unreturnable: Unreturnable
+```
+
+## Unexpected behavior
+
+```
+let exception: Exception
+let error: Error
+```
+
+```
+let type: Type
+```
 ## Functions
 
 All functions receive only one parameter. 
