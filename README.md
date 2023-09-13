@@ -1,5 +1,8 @@
 # vexx
 
+![code](https://github.com/vexeye/vexx/assets/32410574/cd1fce96-0073-42aa-83df-7e2713825daf)
+
+
 Vexx, a general purpose highly opinionated, high performance, universal code language with an emphasis on code literacy, readability, maintainability, consistency and developer experience & ergonomics. All this without sacrificing compilation or runtime speed of the produced applications & libraries.
 
 ## Getting started
