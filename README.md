@@ -31,7 +31,7 @@ Patterns over randomness.
 
 3.
 Beautiful is better than ugly.
-Shorter is better then longer.
+Shorter is better than longer.
 Sparse is better than dense.
 Flat is better than nested.
 Nested is better than mess.
