@@ -164,14 +164,13 @@ let exception: Exception
 let error: Error
 ```
 
-
-
 ## Generic types, traits
 
 ```
 let type: Type
 ```
 
+## 
 
 ## Functions
 
@@ -305,6 +304,27 @@ object.map((p: T): ReturnType |> {
 })
 ```
 
+
+#### Function arity
+
+By default, every function receives one and only one object parameter and under the hood will expand this to individual arguments for the assembly interpretation where applicable.
+
+But oftentimes there is need get more freedom in how a certain function is called.
+
+```
+// Declaration & Definition
+@F::curry(3)
+fn example(p1: T1, p2: T2, p3: T3) => {
+  // Implementation
+}
+
+// Usage
+example(1, 2, 3)
+example(1, 2)(3)
+example(1)(2, 3)
+example(1)(2)(3)
+```
+
 #### Function constructor
 
 The `fn` method is an alias for `F` blueprint primitive that is used for all functions.
@@ -316,13 +336,56 @@ log`$F`
 // Create and call a pure function, returns void result
 log`$F()`
 
-// The `F` constructor has many statically available functional methods
-F::pipe()
-F::compose()
-F::converge()
 
-F::join()
-F::merge()
+```
+
+#### Functional composability
+
+The `F` constructor has many statically available functional methods that can be used natively in any form of loosly-coupled composability.
+
+```
+// Function declaration can be assigned a result of any functional operation.
+fn getName = F::prop(`name`)
+
+getName({
+  name: `Jon`
+})
+```
+
+Then more complex functional composability can be used.
+
+```
+// Using piping (Top to botton)
+fn getMangledUserId = F::pipe(
+  F::prop(`id`)
+  F::prefix(`ID_`)
+)
+
+// Or using composability (Bottom to top)
+fn getMangledUserId = F::compose(
+  F::prefix(`ID_`)
+  F::prop(`id`)
+)
+
+// Usage
+getMangledUserId({
+  id: `0000-0001`
+})
+
+
+// Using convergence
+fn getMangledUserId = F::converge(F::concat)([
+   F::constant(`___`)
+   F::compose(
+      F::prefix(`ID_`)
+      F::prop(`id`)
+   )
+])
+
+// Usage
+getMangledUserId({
+  id: `0000-0001`
+})
 
 ```
 
