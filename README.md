@@ -8,7 +8,7 @@ say`Hello, World!`
 ```
 
 ## Manifesto
-
+```
 1.
 Documentation is pivotal.
 Readability is absolute.
@@ -45,7 +45,7 @@ Exceptions should never pass silently.
 7.
 If the implementation is hard to explain, it's a bad idea.
 If the implementation is easy to explain, it may be a good idea.
-
+```
 ## Entrypoint priority
 
 The priority for the entrypoint of an application or library goes as follows:
