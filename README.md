@@ -157,17 +157,20 @@ let unreturnable: Unreturnable
 ## Unexpected behavior
 
 ```
+// Recoverable unexpected behavior
 let exception: Exception
+
+// Unrecoverable unexpected behavior
 let error: Error
 ```
+
+
+
+## Generic types, traits
 
 ```
 let type: Type
 ```
-
-## Generic types, traits
-
-TBD
 
 
 ## Functions
@@ -233,7 +236,7 @@ fn example(p: T): ReturnType | Void -> {
 
 #### Generator functions
 
-Generator function are used to generate the results when they are needed.
+Generator functions are used to yield results generatively, whenever they are needed.
 
 ```
 fn infinite(p: T): ReturnType /> {
