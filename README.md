@@ -90,31 +90,50 @@ name({
 
 ### Syncronous functions
 
-#### Named functions
+#### Pure functions
+
+Pure functions cannot call other non-pure functions inside it.
 
 ```
 // Declaration & Definition
 fn example(p: T): ReturnType => {
+  let n = getSomethingPure()
+  // Do something with n
+  
   // Function body
+  return ReturnType
 }
 
 // Usage
 example({})
 ```
 
-#### Decorator functions
+#### Impure functions
 
-Decorator functions are used to decorate any existing building block given it passes the prerequisite validaitions.
+Impure functions can call both pure & impure functions inside it, and are assumed to contain side effects.
 
 ```
-fn Component(p: T): ReturnType @> {
-  // return the extended object
+fn example(p: T): ReturnType | Void -> {
+    let something = getSomethingPure()
+    processImpure(&something)
+}
+```
+
+#### Generator functions
+
+Generator function are used to generate the results when they are needed.
+
+```
+fn infinite(p: T): ReturnType /> {
+  let n = 0
+  loop {
+    yield n
+    n = F.increment(n)
+  }
 }
 
-@Component({ styles: `./another.css` })
-fn another() => {
-  // Do something
-}
+log`$infinite().next()` // 0
+log`$infinite().next()` // 1
 ```
 
 
@@ -149,7 +168,6 @@ await promise.pause()
 await promise.cancel()
 ```
 
-
 ### General purpose functions
 
 #### Lamda functions
@@ -170,6 +188,27 @@ object.map((p: T): ReturnType => {
 object.map((p: T): ReturnType |> {
   // Function body
 })
+```
+
+#### Function constructor
+
+The `fn` method is an alias for `F` blueprint primitive that is used for all functions.
+
+```
+// Log an empty pure function
+log`$F` 
+
+// Create and call a pure function, returns void result
+log`$F()`
+
+// The `F` constructor has many statically available functional methods
+F::pipe()
+F::compose()
+F::converge()
+
+F::join()
+F::merge()
+
 ```
 
 ## Blueprints
