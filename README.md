@@ -1,5 +1,7 @@
 # vexx
 
+Vexx, a general purpose high performance universal literal language with an emphasis on readability, consistency and developer experience & ergonomics. All this without sacrificing compilation or runtime speed of the produced applications & libraries.
+
 ## Hello world
 
 ```
@@ -46,10 +48,8 @@ In the face of ambiguity, refuse the temptation to guess.
 Special cases aren't special enough to break the rules.
 Errors should never be logged superficially.
 Exceptions should never pass silently.
-
-7.
-
 ```
+
 ## Entrypoint priority
 
 The priority for the entrypoint of an application or library goes as follows:
@@ -62,7 +62,7 @@ The priority for the entrypoint of an application or library goes as follows:
 
 ## Literal language
 
-Vexx is a highly literal language with an emphasis on keeping the balance between readability, consistency and developer experience & ergonomics without sacrificing compilation or runtime speed of the produced applications & libraries.
+Being a highly literal language it is important to have everything tool and building block to the disposal of the developer, enabling the writing of clear, readable and maintainable code. 
 
 ### Comments
 
@@ -378,13 +378,11 @@ log`$F`
 
 // Create and call a pure function, returns void result
 log`$F()`
-
-
 ```
 
 #### Functional composability
 
-The `F` constructor has many statically available functional methods that can be used natively in any form of loosly-coupled composability.
+The `F` constructor has many statically available functional methods that can be used natively in any form of loosely-coupled composability.
 
 ```
 // Function declaration can be assigned a result of any functional operation.
@@ -429,7 +427,6 @@ fn getMangledUserId = F::converge(F::concat)([
 getMangledUserId({
   id: `0000-0001`
 })
-
 ```
 
 ## Decorators
@@ -528,7 +525,7 @@ Access modifiers with zero runtime overhead, compile time memory alignment and p
 
 By design there are 2 ways of looking at access modifiers.
 
-#### Implcit
+#### Implicit
 
 All fields and methods are visible to the consumers by default
 ```
@@ -545,7 +542,7 @@ Fields and methods are granularly grouped in a vertical manner
 
 ```
 bp Parent(&self) {
-# @Visible
+# @Public
     fullName: String
 # @Inherit
     bankCredentials: String
