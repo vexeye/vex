@@ -7,6 +7,45 @@
 say`Hello, World!`
 ```
 
+## Manifesto
+
+1.
+Documentation is pivotal.
+Readability is absolute.
+Consistency is crucial.
+Testing is unavoidable.
+Benchmarking is vital.
+
+3.
+Developer experience over eternal struggle.
+Quantity of files over quantity of lines.
+Verticality over horizontality.
+Patterns over randomness.
+
+4.
+Explicit is better than implicit.
+Clarity is better than ambiguity.
+...
+Complex is better than complicated.
+Simple is better than complex.
+
+5.
+Beautiful is better than ugly.
+Shorter is better then longer.
+Sparse is better than dense.
+Flat is better than nested.
+Nested is better than mess.
+
+6.
+In the face of ambiguity, refuse the temptation to guess.
+Special cases aren't special enough to break the rules.
+Errors should never be logged superficially.
+Exceptions should never pass silently.
+
+7.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+
 ## Entrypoint priority
 
 The priority for the entrypoint of an application or library goes as follows:
