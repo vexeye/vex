@@ -101,9 +101,9 @@ Being a highly literal language it is important to have everything tool and buil
 
 ### Comment section
 
-Section comments are use to group related code together for easier, digestible reading.
+Comment sections are use to group related code together for easier, digestible reading.
 
-Section comments can be then collapsed/expanded by the IDE, while simple comments can not.
+Comment sections can be then collapsed/expanded by the IDE, while simple comments can not.
 
 ```
 // any.x
@@ -113,6 +113,10 @@ Section comments can be then collapsed/expanded by the IDE, while simple comment
 ## Sub-section commentary
 
 fn doSomething(): T => {
+  # Process this thing
+  // Implementation
+
+  # Process that thing
   // Implementation
 }
 
