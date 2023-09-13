@@ -6,7 +6,7 @@ Vexx, a general purpose highly opinionated, high performance, universal code lan
 
 ```
 // main.x
-say`Hello, World!`
+say`Hello, world!`
 ```
 
 ## Manifesto
@@ -127,6 +127,41 @@ fn doSomething(): T => {
 fn doSomethingNasty(): T => {
   // Implementation
 }
+```
+
+## Printing, logging & debugging
+
+Vexx has all the functionality to print to the terminal using 13 different log levels for all your needs.
+
+### General purpose
+
+```
+say`Hello, world! 👋`
+log`Server started at $address:$port`
+info`Server database migration succeeded`
+warn`Server database schema is inconsistent`
+panic`Server database connection failed: $exception`
+fatal`Service unrecoverable error occured: $error. Exiting...`
+```
+
+### Tracing, benchmarking and debugging
+```
+dbg(obj)
+trace(obj)
+
+time`Long running function`
+timeLog`Long running function`
+
+profile`Test case: CPU Spikes`
+profileLog`Test case: CPU Spikes`
+```
+
+### Utility
+
+```
+table([{a: 1}, {a: 2])
+group`This is a logging group`
+groupEnd`This is a logging group`
 ```
 
 ## Data types
