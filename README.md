@@ -166,14 +166,14 @@ groupEnd`This is a logging group`
 
 ## Data types
 
-## Logical
+### Logical
 
 ```
 let bFalse: Bool = true
 let bFalse: Bool = false
 ```
 
-## Numbers
+### Numbers
 
 ```
 // Real
@@ -207,7 +207,7 @@ let int8Value: F128 = 1.0 // 128-bit floating point (112-bit mantissa) IEEE-754-
 let numberInRange: Number({ range: 1...500 }) = 499
 ```
 
-## Characters
+### Characters
 
 ```
 // Char type with backtick delimiters
@@ -220,7 +220,7 @@ let stringValue: String = `Hello, world!`
 let symbolValue: Symbol = @`Symbol`
 ```
 
-## Special cases
+### Special cases
 
 ```
 let void: Void
@@ -235,7 +235,7 @@ let returnable: Returnable
 let unreturnable: Unreturnable
 ```
 
-## Unexpected behavior
+### Unexpected behavior
 
 ```
 // Recoverable unexpected behavior
@@ -251,7 +251,17 @@ let error: Error
 let type: Type
 ```
 
-## 
+## Control flow
+
+```
+TBD
+```
+
+## Logical expressions
+
+```
+TBD
+```
 
 ## Functions
 
@@ -451,7 +461,6 @@ getMangledUserId({
   id: `0000-0001`
 })
 
-
 // Using convergence
 fn getMangledUserId = F::converge(F::concat)([
    F::constant(`___`)
@@ -580,7 +589,7 @@ Fields and methods are granularly grouped in a vertical manner
 
 ```
 bp Parent(&self) {
-# @Public
+# @Visible
     fullName: String
 # @Inherit
     bankCredentials: String
@@ -591,10 +600,10 @@ bp Parent(&self) {
 
 ### Coupling
 
-In Vexx there are two ways of coupling.
+In Vexx there are two ways of coupling blueprints.
 
-- Strict via blueprint parent inheritance
-- Loose via blueprint dependency composition
+- **Strict** via blueprint parent inheritance
+- **Loose** via blueprint dependency composition
 
 #### Dependency Inheritance
 
@@ -658,8 +667,4 @@ bp Child(&self) ~ [Sibling1, Sibling2] {
         log`&self.sibling2.toy2`
     }
 }
-
 ```
-
-
-## Control flow
