@@ -45,12 +45,12 @@ Vexx is a highly literal language with an emphasis on keeping the balance betwee
 */
 
 /**
-* This is a multi-line comment with decorators.
+* This is a multi-line comment with a @vexx/doc decorator.
 * @See https://vexxlang.com
 */
 
 /**
-* This is a chonky multi-line comment with multiple Vexxdoc decorators.
+* This is a chonky multi-line comment with multiple @vexx/doc decorators.
 * @Author Reanimated Man X <mail@rmx.codes> / Alexei Gaidulean
 * @See https://vexxlang.com
 */
