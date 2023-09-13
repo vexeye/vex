@@ -194,7 +194,7 @@ await promise.cancel()
 
 #### Lamda functions
 
-Anonymous lamda functions are short-lived functions that can be defined only under a certain context, such as a callback for another function.
+Anonymous lamda functions are short-lived functions that are bound to a callback of another function, and cannot be declared somewhere else.
 
 They can be one of types:
 - Syncronous
@@ -254,6 +254,48 @@ bp BlueprintName(&self) {
     }
 }
 ```
+
+### Methods
+
+Methods are functions bound to a blueprint scope.
+
+There can be two types of methods:
+
+#### Bound
+
+```
+// Declaration & Definition
+bp BlueprintName(&self) {
+    fn method(p1: ParamType1) => ReturnType { // 👈 This is a bound method as it's a direct child of the owning `bp`
+        // Method implementation
+        return ReturnType
+    }
+}
+
+// Usage
+let b = BlueprintName()
+
+b.method()
+```
+
+#### Static
+
+Static methods can be called directly from the blueprint avoiding the need to instantiate it, they cannot access the `&self` reference inside them.
+
+```
+bp BlueprintName(&self) {
+# @Static
+    fn method(p1: ParamType1) => ReturnType { // 👈 This is static method declared in the `Static` section `bp`
+        // Method implementation
+        return ReturnType
+    }
+}
+
+// Usage
+BlueprintName::method() // 👈 The call to a static method is done via `::`
+```
+
+
 
 ### Access modifiers
 
