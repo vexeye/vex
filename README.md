@@ -336,9 +336,9 @@ In Vexx there are two ways of coupling.
 - Strict via blueprint parent inheritance
 - Loose via blueprint dependency composition
 
-#### Parent Inheritance
+#### Dependency Inheritance
 
-Parent Inheritance is done by using the `:` symbol between the `Child` and the `Parent(s)`
+Dependency Inheritance is done by using the `:` symbol between the `Child` and the `Parent(s)`
 
 > ℹ️ When using inheritance, all the properties of the parents would be accessible or in other words, merged, in the `&self` reference.
 
@@ -353,16 +353,27 @@ bp Child(&self) : Parent {
 }
 
 // Many parents
-bp Child(&self) : [Parent1, Parent2] {
-    fieldName: String
+bp Child(&self) : [Father, Mother] {
+    name: String
 
     constructor(props: ChildProps) {
-        log`&self.bankAccount`
+        log`&self.maleTraits`
+        log`&self.femaleTraits`
+    }
+}
+
+bp Child(&self) : [Parent1, Parent2, Parent3] {
+    name: String
+
+    constructor(props: ChildProps) {
+        log`&self.uniqueField1`
+        log`&self.uniqueField2`
+        log`&self.uniqueField3`
     }
 }
 ```
 
-#### Dependency composition
+#### Dependency Composition
 
 Dependency composition is done by using the `~` symbol between the `Child` and the `Sibling(s)`
 
