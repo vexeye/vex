@@ -1,6 +1,6 @@
 # vexx
 
-Vexx, a general purpose high performance universal literal language with an emphasis on readability, consistency and developer experience & ergonomics. All this without sacrificing compilation or runtime speed of the produced applications & libraries.
+Vexx, a general purpose high performance universal programming / scripting language with an emphasis on code literacy, readability, maintainability, consistency and developer experience & ergonomics. All this without sacrificing compilation or runtime speed of the produced applications & libraries.
 
 ## Hello world
 
@@ -99,7 +99,7 @@ Being a highly literal language it is important to have everything tool and buil
 */
 ```
 
-### Comment section
+### Comment sections
 
 Comment sections are use to group related code together for easier, digestible reading.
 
@@ -136,7 +136,6 @@ fn doSomethingNasty(): T => {
 ```
 let bFalse: Bool = true
 let bFalse: Bool = false
-
 ```
 
 ## Numbers
