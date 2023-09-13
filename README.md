@@ -137,6 +137,18 @@ fn doSomethingNasty(): T => {
 }
 ```
 
+### Embedded Linter / Prettier
+
+```
+TBD
+```
+
+### Ligatures as first class citezen
+
+```
+TBD
+```
+
 ## Printing, logging & debugging
 
 Vexx has all the functionality to print to the terminal using 13 different log levels for all your needs.
@@ -266,6 +278,12 @@ TBD
 ```
 
 ## Logical expressions
+
+```
+TBD
+```
+
+### Value importance
 
 ```
 TBD
@@ -675,6 +693,12 @@ bp Child(&self) ~ [Sibling1, Sibling2] {
         log`&self.sibling2.toy2`
     }
 }
+```
+
+## Aliases
+
+```
+TBD
 ```
 
 ## Enums
