@@ -144,10 +144,12 @@ let symbolValue: Symbol = @`Symbol`
 ```
 let void: Void
 let null: Null
+let unknown: Unknown
 
 let required: Required
 let optional: Optional
 
+let composable: Composable
 let returnable: Returnable
 let unreturnable: Unreturnable
 ```
