@@ -930,8 +930,9 @@ Example().g
 ### For package imports
 
 ```
-import { Something as S } from `@scope/name`
+import `@scope/name` as Alias
+import { Something as Alias } from `@scope/name`
 
 // Usage
-S()
+Alias()
 ```
