@@ -69,6 +69,8 @@ The priority for the entrypoint of an application or library goes as follows:
 - Multiple `main.x` files are prohibited per one single application, library.
 - Multiple `main` functions are prohibited per one single application, library.
 
+
+
 ## Literal language
 
 Being a highly literal language it is important to have everything tool and building block to the disposal of the developer, enabling the writing of clear, readable and maintainable code. 
@@ -284,7 +286,95 @@ TBD
 TBD
 ```
 
-### Value importance
+## Packages
+
+Vexx enforces the user to declare & define a single building block entity per file, unless part of a namespace, therefore learning how to import/export building blocks is an important step moving forward.
+
+## Namespaces
+
+Namespaces are top-most building block and are used to group related building blocks together.
+
+We can define & concatinate the namespaces as such
+
+```
+// src/user.x
+ns User
+ns User:Profile // ❌ Compilation error: Another encapsulating namespace block cannot be defined in the same file.
+
+// Using a single `/` token 
+fn User:myFunction() {
+    // Implementation
+}
+
+en User:UserRoles {
+    USER
+    ADMIN
+}
+```
+
+### Example
+
+Let's analyze this example.
+
+```
+// src/main.x
+
+en UserRoles {  // ❌ Compilation Error: Another building block cannot be defined in the same file, unless it's part of an unique namespace.
+    USER
+    ADMIN
+}
+
+it User {  // ❌ Compilation Error: Another building block cannot be defined in the same file, unless it's part of an unique namespace.
+    name: String
+}
+
+fn utilty() => { // ❌ Compilation Error: Another building block cannot be defined in the same file, unless it's part of an unique namespace.
+    // Implementation exists
+}
+
+bp User(&) { // ❌ Compilation Error: Another building block cannot be defined in the same file, unless it's part of an unique namespace.
+    // Implementation
+}
+
+fn main() => {
+    say`Hello!`
+}
+```
+
+To solve it, we extact the blocks into their corresponding files.
+
+```
+// src/util.x
+fn utilty() => { // ✅ All good :)
+    // Implementation exists
+}
+```
+
+Then, we create a namespace to group all user related stuff in there.
+
+```
+// src/users.x
+ns Users 
+
+en Users:UserRoles {
+    USER
+    ADMIN
+}
+
+bp Users:User(&) { // ✅ All good :)
+    // Implementation
+}
+
+// src/main.x
+import { Users } from `./users`
+
+fn main() => {
+    let user = Users:User()
+    say`Hello, $user!`
+}
+```
+
+## Namespaces
 
 ```
 TBD
