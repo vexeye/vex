@@ -2,9 +2,7 @@
 
 Vexx, a general purpose, highly opinionated, high performance, universal code language with an emphasis on code literacy, readability, maintainability, consistency and developer experience & ergonomics. All this without sacrificing compilation or runtime speed of the produced applications & libraries.
 
-
 ![code](https://github.com/vexeye/vexx/assets/32410574/59d6e8d3-a8f6-4e4d-9a5c-b3e39262dc6f)
-
 
 ## Getting started
 
@@ -68,8 +66,6 @@ The priority for the entrypoint of an application or library goes as follows:
 
 - Multiple `main.x` files are prohibited per one single application, library.
 - Multiple `main` functions are prohibited per one single application, library.
-
-
 
 ## Literal language
 
@@ -160,11 +156,11 @@ Vexx has all the functionality to print to the terminal using 13 different log l
 
 ```
 say`Hello, world! 👋`
-log`Server started at $address:$port`
-info`Server database migration succeeded`
-warn`Server database schema is inconsistent`
-panic`Server database connection failed: $exception`
-fatal`Service unrecoverable error occured: $error. Exiting...`
+log`Server started at $address:$port.`
+info`Server database seeding succeeded.`
+warn`Server database schema is inconsistent.`
+panic`Server database connection failed: $exception. Retrying...`
+fatal`Service encountered an unrecoverable error: $error. Exiting...`
 ```
 
 ### Tracing, benchmarking and debugging
