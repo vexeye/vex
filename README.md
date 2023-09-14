@@ -749,16 +749,18 @@ fn example() => {
 
 ### For Blueprints
 
+> ℹ️ Blueprint aliases must start with a capital letter. Aliases are case-sensitive.
+
 ```
 // Single alias
 bp Example(&self) {
   // Implementation
-} as ex
+} as Ex
 
 // Many aliases
-fn Example(&self) => {
+bp Example(&self) {
   // Implementation
-} as [exb, ex]
+} as [Exmp, Exm, Ex, EX] // 👈 Valid, as it's case sensitive
 ```
 
 ### For Blueprint fields
@@ -769,13 +771,15 @@ bp Example(&self) {
   help: String = `Unique` as h
 
   // Many aliases
-  group: String = `Unique` as g
+  group: String = `Unique` as [grp, gr, g]
 }
 
 // 👇 All the below are valid
 Example().help
-Example().group
 Example().h
+Example().group
+Example().grp
+Example().gr
 Example().g
 ```
 
