@@ -422,7 +422,6 @@ object.map((p: T): ReturnType |> {
 })
 ```
 
-
 #### Function arity
 
 By default, every function receives one and only one object parameter and under the hood will expand this to individual arguments for the assembly interpretation where applicable.
@@ -505,7 +504,7 @@ getMangledUserId({
 
 ## Decorators
 
-Decorators are functional blueprints to vertically extend other building blocks.
+Decorators are functional blueprints to vertically extend other building blocks with non-destructive composability.
 
 ```
 dc DecoratorName(&self) {
@@ -699,7 +698,15 @@ bp Child(&self) ~ [Sibling1, Sibling2] {
 ## Enums
 
 ```
-TBD
+en Enumeration {
+    ONE
+    TWO
+    THREE
+}
+
+// Usage
+Enumeration.ONE
+Enumeration.TWO
 ```
 
 ## Aliases
