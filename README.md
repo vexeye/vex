@@ -696,12 +696,6 @@ bp Child(&self) ~ [Sibling1, Sibling2] {
 }
 ```
 
-## Aliases
-
-```
-TBD
-```
-
 ## Enums
 
 ```
@@ -710,6 +704,70 @@ TBD
 
 ## Aliases
 
+Aliases are a way to create zero-overhead alternative way on accessing a certain function, blueprint or field.
+
+### For Functions
+
 ```
-TBD
+
+// Single alias
+fn example() => {
+  // Implementation
+} as ex
+
+// Many aliases
+fn akwardlyLongFunctioName() => {
+  // Implementation
+} as [alfnx, alfn, af]
+
+// 👇 All of theese point to one memory address
+akwardlyLongFunctioName()
+alfnx()
+alfn()
+af()
+
+// Pointing to an existing alias anywhere in the context of your app/lib
+
+// src/a.x
+fn example() => {
+  // Implementation
+} as ex
+
+// src/b.x
+fn example() => {
+  // Implementation
+} as ex
+// 👆 Compilation error: The alias `ex` already exists in [...]
+```
+
+### For Blueprints
+
+```
+// Single alias
+bp Example(&self) {
+  // Implementation
+} as ex
+
+// Many aliases
+fn Example(&self) => {
+  // Implementation
+} as [exb, ex]
+```
+
+### For Blueprint fields
+
+```
+bp Example(&self) {
+  // Single alias
+  help: String = `Unique` as h
+
+  // Many aliases
+  group: String = `Unique` as g
+}
+
+// 👇 All the below are valid
+Example().help
+Example().group
+Example().h
+Example().g
 ```
