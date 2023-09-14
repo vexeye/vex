@@ -301,7 +301,7 @@ We can define & concatinate the namespaces as such
 ns User
 ns User:Profile // ❌ Compilation error: Another encapsulating namespace block cannot be defined in the same file.
 
-// Using a single `/` token 
+// Using a single `:` token 
 fn User:myFunction() {
     // Implementation
 }
