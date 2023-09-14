@@ -771,3 +771,12 @@ Example().group
 Example().h
 Example().g
 ```
+
+### For package imports
+
+```
+import { Something as S } from `@scope/name`
+
+// Usage
+S()
+```
