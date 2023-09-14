@@ -446,14 +446,14 @@ All of this with zero runtime overhead.
 
 ```
 // Definition
-fn name(p: ParamType) => ReturnType {
+fn example(p: ParamType) => ReturnType {
     // Function body
     // ...
     return returnValue
 }
 
 // Call
-name({
+example({
   id: `1234`
   value: `Value`
 })
@@ -643,7 +643,7 @@ getMangledUserId({
 
 ## Decorators
 
-Decorators are functional blueprints to vertically extend other building blocks with non-destructive composability.
+Decorators are functional blueprints to vertically extend other building blocks in a non-destructive manner.
 
 ```
 dc DecoratorName(&self) {
@@ -730,6 +730,11 @@ bp BlueprintName(&self) {
 // Usage
 BlueprintName::method() // 👈 The call to a static method is done via `::`
 ```
+
+> ℹ️ Accessing a static blueprint method encapsulated inside a namespace looks like this:
+> ```
+> Namespace:Blueprint::staticMethod()
+> ```
 
 ### Access modifiers
 
