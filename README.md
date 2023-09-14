@@ -108,7 +108,7 @@ Being a highly literal language it is important to have everything tool and buil
 
 ### Comment sections
 
-Comment sections are use to group related code together for easier, digestible reading.
+Comment sections are used to group related code together for easier, digestible reading.
 
 Comment sections can be then collapsed/expanded by the IDE, while simple comments can not.
 
@@ -150,15 +150,18 @@ TBD
 
 ## Printing, logging & debugging
 
-Vexx has all the functionality to print to the terminal using 13 different log levels for all your needs.
+Vexx has all the functionality to print to the terminal using `7` different log levels for all your needs.
 
 ### General purpose
 
 ```
 say`Hello, world! 👋`
+
 log`Server started at $address:$port.`
 info`Server database seeding succeeded.`
 warn`Server database schema is inconsistent.`
+
+alert`Server received unexpected traffic from $ip. Notifying...`
 panic`Server database connection failed: $exception. Retrying...`
 fatal`Service encountered an unrecoverable error: $error. Exiting...`
 ```
