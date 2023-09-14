@@ -290,6 +290,62 @@ TBD
 
 Vexx enforces the user to declare & define a single building block entity per file, unless part of a namespace, therefore learning how to import/export building blocks is an important step moving forward.
 
+
+### Importing
+
+
+**Installed**
+
+```
+// 1. Import all from an installed package
+
+// Import the whole package in it's entirety and access the blocks directly
+import `@scope/package`
+
+// Import the whole package in it's entirety and assign a local alias to it
+import `@scope/package` as LocalAlias
+
+// 2. Import partial from an installed package
+
+// Import a single part from the whole package
+// ℹ️ The whole package is downloaded & installed, only `Part` is included in the build.
+import { Part } from `@scope/package`
+
+// Import a single part from the package and assign a local alias to it
+import { Part as MyPart } from `@scope/package`
+
+// 3. Import selective namespace from an installed package
+
+// Import everything from this namespace
+// ℹ️ Only the namespace is downloaded & installed, everything that is part of the namespace is included in the build.
+import `@scope/package:namespace`
+
+// Import a single part from the package namespace
+// ℹ️ Only the namespace is downloaded & installed, only `Part` of the namespace is included in the build.
+import { Part } from `@scope/package:namespace`
+
+// Import a single part from the package and assign a local alias to it
+import { Part as MyPart } from `@scope/package:namespace`
+```
+
+**Local**
+
+The same rules applies to local files
+
+```
+// Import the whole file in it's entirety and access the blocks directly
+import `./user`
+
+// Import the whole file in it's entirety and assign a local alias to it
+import `./user` as LocalUser
+
+// Import a part of a file
+import { Part } from `./user`
+
+// Import a part of a file and assign a local alias to it
+import { Part as MyPart } from `./user`
+```
+
 ## Namespaces
 
 Namespaces are top-most building block and are used to group related building blocks together.
@@ -372,12 +428,6 @@ fn main() => {
     let user = Users:User()
     say`Hello, $user!`
 }
-```
-
-## Namespaces
-
-```
-TBD
 ```
 
 ## Functions
