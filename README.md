@@ -313,21 +313,57 @@ let error: Error
 (1, true)
 ```
 
-### Literals and operators
+### Literals
 
 Integers 1, floats 1.2, characters 'a', strings "abc", booleans true and the unit type () can be expressed using literals.
 
-Integers can, alternatively, be expressed using hexadecimal, octal or binary notation using these prefixes respectively: 0x, 0o or 0b.
+#### Modifiers
 
-Underscores can be inserted in numeric literals to improve readability, e.g. 1_000 is the same as 1000, and 0.000_001 is the same as 0.000001.
-
-Rust also supports scientific E-notation, e.g. 1e6, 7.6e-4. The associated type is f64.
-
-We need to tell the compiler the type of the literals we use. For now, we'll use the u32 suffix to indicate that the literal is an unsigned 32-bit integer, and the i32 suffix to indicate that it's a signed 32-bit integer.
-
+- Hexadecimal
 ```
-let type: Type
+0x
 ```
+- Octal
+```
+0o
+```
+- Binary
+```
+0b
+```
+- Number blank separator
+```
+100000000 is the same as `10_000_000`
+0.0000001 is the same as 0.000_001
+```
+- Scientific E-notation (F64)
+```
+1e6
+7.6e-4
+```
+
+#### Operators
+
+- And
+```
+true && true
+```
+
+- Or
+```
+true || false
+```
+
+- Not
+```
+!true
+```
+- Range
+```
+1 .. 5
+```
+
+TBD Bitwise operators
 
 ## Control flow
 
@@ -420,11 +456,12 @@ fn do = match {
 do(value)
 ```
 
-#### Comparison
 
-| Imperative | Functional |
-| ---------- | ---------- |
-| if (expression == value) { } | if(expression)(value)
+## Generics
+
+```
+let type: Type
+```
 
 ## Logical expressions
 
