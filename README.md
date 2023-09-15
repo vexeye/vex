@@ -275,9 +275,102 @@ let type: Type
 
 ## Control flow
 
+### Few conditions
+
+`assert` control block is used for short, non-exhaustive, simple to digest assertions
+
+- `assert` blocks cannot be nested
+- `assert` blocks do not have `assert if` statements
+
 ```
-TBD
+// Assert guards
+assert !isReady {
+    return
+}
+
+// Multiple conditions
+// ℹ️ Up to 3 distinct chained conditions in expression
+assert isUserInvited || isUserCreated || isUserOnboarded  {
+    say`🍾 Congrats`
+}
+
+// Call a function and return the flow to the block parent
+assert value = 1 {
+    doThis()
+    return
+}
+
+// Add an `else` fallback
+assert value = 3 {
+    say`The value is nuts!`
+} else {
+    warn`But something doesn't add up`
+}
+
+// Use the expression value locally
+assert value = 3 as Some(v) {
+    say`The value of $v is total nuts!`
+} else {
+    warn`But something doesn't add up`
+}
+
 ```
+
+> ℹ️ For complex expressions involving many conditions use `match`
+
+### Many conditions
+```
+// Match single value against expressions
+match value {
+    1      -> doThis()
+    2      -> doThat()
+    6 | 9  -> doPick()
+    3...5  -> doRange()
+    _      -> doFallback()
+}
+
+// Match all values against expressions
+match * {
+    value1 = 1             -> doThis()
+    value2 = 2 && isMirror -> doThat()
+    _                       -> doFallback()
+}
+
+// Pass the matched value
+match {
+    1      (v) -> doThis(v)
+    2      (v) -> doThat(v)
+    _      (v) -> doFallback(v)
+}
+
+// Use block scope for calling multiple impure functions
+match {
+    1 (v) -> {
+      callSync(v)
+      await callAsync(v)
+    }
+    2 () -> doThat()
+    _ () -> doFallback()
+} (value)
+
+// Define a matching strategy
+fn do = match {
+    1 : doThis
+    2 : doThat
+    _ : doFallback
+}
+
+// Usage
+do(value)
+```
+
+```
+
+#### Comparison
+
+| Imperative | Functional |
+| ---------- | ---------- |
+| if (expression == value) { } | if(expression)(value)
 
 ## Logical expressions
 
@@ -288,7 +381,6 @@ TBD
 ## Packages
 
 Vexx enforces the user to declare & define a single building block entity per file, unless part of a namespace, therefore learning how to import/export building blocks is an important step moving forward.
-
 
 ### Importing
 
