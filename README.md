@@ -322,38 +322,38 @@ assert value = 3 as Some(v) {
 ```
 // Match single value against expressions
 match value {
-    1      -> doThis()
-    2      -> doThat()
-    6 | 9  -> doPick()
-    3...5  -> doRange()
-    _      -> doFallback()
+    1       -> doThis()
+    2       -> doThat()
+    6 || 9  -> doChoose()
+    3 .. 5  -> doInRange()
+    _       -> doFallback()
 }
 
 // Match all values against expressions
 match * {
     value1 = 1             -> doThis()
     value2 = 2 && isMirror -> doThat()
-    _                       -> doFallback()
+    _                      -> doFallback()
 }
 
 // Pass the matched value
-match {
+match value {
     1      (v) -> doThis(v)
     2      (v) -> doThat(v)
     _      (v) -> doFallback(v)
 }
 
 // Use block scope for calling multiple impure functions
-match {
+match value {
     1 (v) -> {
       callSync(v)
       await callAsync(v)
     }
     2 () -> doThat()
     _ () -> doFallback()
-} (value)
+}
 
-// Define a matching strategy
+// Define a matching strategy for functions with identical input parameters
 fn do = match {
     1 : doThis
     2 : doThat
