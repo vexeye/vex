@@ -317,48 +317,60 @@ let error: Error
 
 Integers 1, floats 1.2, characters 'a', strings "abc", booleans true and the unit type () can be expressed using literals.
 
-#### Modifiers
+Literal modifiers are single characters prefixed, suffixed or part of the literal body.
 
-- Hexadecimal
+Below is a list of literal modifiers.
+
+#### Hexadecimal
 ```
 0x
+
+0x80
 ```
-- Octal
+
+#### Octal
 ```
 0o
+
 ```
-- Binary
+
+#### Binary
 ```
 0b
+
+0b0011
 ```
-- Number blank separator
-```
-100000000 is the same as `10_000_000`
-0.0000001 is the same as 0.000_001
-```
-- Scientific E-notation (F64)
+
+#### Scientific E-notation (F64)
 ```
 1e6
 7.6e-4
 ```
 
-#### Operators
+#### Number blank separator
+```
+100000000 is the same as `10_000_000`
+0.0000001 is the same as 0.000_001
+```
 
-- And
+
+### Operators
+
+#### And
 ```
 true && true
 ```
 
-- Or
+#### Or
 ```
 true || false
 ```
 
-- Not
+#### Not
 ```
 !true
 ```
-- Range
+#### Range
 ```
 1 .. 5
 ```
