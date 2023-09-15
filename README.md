@@ -191,6 +191,54 @@ groupEnd`This is a logging group`
 Vexx is structured and build around repetitive, consistent structures called **blocks**.
 
 ```
+// Anonymous block
+{   // 👈 Block header
+    // 👈 Block body
+}   // 👈 Block footer
+
+// Unique anonymous block
+token {
+     // Body
+}
+
+// Unique anonymous block with callable expression
+token (expression) {
+     // Body
+}
+
+// Uniquely named block
+token Example {
+     // Body
+}
+
+// Uniquely named block with callable expression
+token Example(expression) {
+     // Body
+}
+
+// Uniquely named block with callable expression and header extension.
+token Example(expression) token value {
+     // Body
+}
+
+// Uniquely named block with callable expression and header and footer extension.
+token Example(expression) token value {
+     // Body
+} token value
+```
+
+Blocks can be split in `3` categories.
+
+### Creational
+- Modeling Blocks
+- Building Blocks
+- Grouping Blocks
+
+### Logical
+- Condition Blocks
+- Loop Blocks
+
+```
 TBD
 ```
 
@@ -352,7 +400,6 @@ Below is a list of literal modifiers.
 100000000 is the same as `10_000_000`
 0.0000001 is the same as 0.000_001
 ```
-
 
 ### Operators
 
