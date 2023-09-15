@@ -190,12 +190,59 @@ groupEnd`This is a logging group`
 
 Vexx is structured and build around repetitive, consistent structures called **blocks**.
 
-```
-// Anonymous block
-{   // 👈 Block header
-    // 👈 Block body
-}   // 👈 Block footer
+### Anatomy
 
+Here is a general overview of Vexx block anatomy.
+
+```
+// Block
+  👇 Header token
+  {   👈 Block header line
+      👈 Block body line(s)
+  }   👈 Block footer line
+ 👆 Footer token
+```
+
+### Block tokens
+
+There can be `3` types of blocks
+
+```
+// "Encapsulation" block, represented by `{` and `}` characters.
+{
+   // Body
+}
+
+// "Enumeration" block, represented by `[` and `]` characters.
+[
+   // Body
+]
+
+// "Expression" block, represented by `(` and `)` characters.
+(
+   // Body
+)
+
+// Example
+
+bp Blueprint {
+  // Body
+}
+
+en Enum [
+  A
+  B
+]
+
+compose Compose (
+  Fn1
+  Fn2
+  Fn3
+)
+```
+
+### Semantics
+```
 // Unique anonymous block
 token {
      // Body
@@ -227,15 +274,14 @@ token Example(expression) token value {
 } token value
 ```
 
-Blocks can be split in `3` categories.
+There are `7` block categories.
 
-### Creational
+- Extension Blocks
 - Modeling Blocks
 - Building Blocks
 - Grouping Blocks
-
-### Logical
-- Condition Blocks
+- Storage Blocks
+- Logical Blocks
 - Loop Blocks
 
 ```
@@ -1089,15 +1135,25 @@ bp Child(&self) ~ [Sibling1, Sibling2] {
 ## Enums
 
 ```
-en Enumeration {
+en Enumeration [
     ONE
     TWO
     THREE
-}
+]
 
 // Usage
 Enumeration.ONE
 Enumeration.TWO
+```
+
+## Tables
+
+```
+tb Table [
+  [1, 2, 3]
+  [4, 5, 6]
+  [7, 8, 9]
+]
 ```
 
 ## Aliases
