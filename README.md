@@ -186,50 +186,84 @@ group`This is a logging group`
 groupEnd`This is a logging group`
 ```
 
-## Data types
+## Foundations
 
-### Logical
+Vexx is structured and build around repetitive, consistent structures called **blocks**.
+
+```
+TBD
+```
+
+## Primitives
+
+Vexx provides access to a wide variety of primitives.
+
+### Scalar Types
+
+- Bitwise types: Bit
+- Signed integers: I8, I16, I32, I64, I128 and ISize (pointer size)
+- Unsigned integers: U8, U16, U32, U64, U128 and USize (pointer size)
+- Floating point: F32, F64
+- Char Unicode scalar values like 'a', 'α' and '∞' (4 bytes each)
+- Bool either true or false
+- The Unit type (), whose only possible value is an empty tuple: ()
+
+> ℹ️ Despite the value of a `Unit` type being a tuple, it is not considered a compound type because it does not contain multiple values.
+
+#### Bit
+
+```
+let bitValue: Bit = 1 // 0 or 1
+```
+
+#### Signed integer
+
+```
+let int8Value: I8
+let int16Value: I16
+let int32Value: I32
+let int64Value: I64
+let int128Value: I128
+```
+
+#### Unsigned integer
+```
+let unsignedInt8Value: uI8
+let unsignedInt16Value: uI16
+let unsignedInt32Value: uI32
+let unsignedInt64Value: uI64
+let unsignedInt128Value: uI128
+```
+
+#### Floating point
+```
+let int8Value: F16 = 1.0  // 16-bit floating point (10-bit mantissa) IEEE-754-2008 binary16
+let int8Value: F32 = 1.0  // 32-bit floating point (23-bit mantissa) IEEE-754-2008 binary32
+let int8Value: F64 = 1.0  // 64-bit floating point (52-bit mantissa) IEEE-754-2008 binary64
+let int8Value: F80 = 1.0  // 80-bit floating point (64-bit mantissa) IEEE-754-2008 80-bit extended precision
+let int8Value: F128 = 1.0 // 128-bit floating point (112-bit mantissa) IEEE-754-2008 binary128
+```
+
+#### Infered numbers
+
+Any of the above can be infered via the `Number` type
+
+```
+let v = 2         // Implicitly Number
+let v = 2: Number // Explicitly Number
+
+// Special
+let numberInRange: Number({ range: 1...500 }) = 499
+```
+
+#### Logical
 
 ```
 let bFalse: Bool = true
 let bFalse: Bool = false
 ```
 
-### Numbers
-
-```
-// Real
-let v = 1 // Number
-let value: Number = 1
-let bitValue: Bit = 1
-
-let int8Value: I8 = 127
-let unsignedInt8Value: uI8 = 256
-
-let int16Value: I16 = 32767
-let unsignedInt16Value: uI16 = 65536
-
-let int32Value: I32 = 2147483647
-let unsignedInt32Value: uI32 = 4294967294
-
-let int64Value: I64 = // ...
-let unsignedInt64Value: uI64 =// ...
-
-let int128Value: I128 = // ...
-let unsignedInt128Value: I128 = // ...
-
-// Floats
-let int8Value: F16 = 1.0  // 16-bit floating point (10-bit mantissa) IEEE-754-2008 binary16
-let int8Value: F32 = 1.0  // 32-bit floating point (23-bit mantissa) IEEE-754-2008 binary32
-let int8Value: F64 = 1.0  // 64-bit floating point (52-bit mantissa) IEEE-754-2008 binary64
-let int8Value: F80 = 1.0  // 80-bit floating point (64-bit mantissa) IEEE-754-2008 80-bit extended precision
-let int8Value: F128 = 1.0 // 128-bit floating point (112-bit mantissa) IEEE-754-2008 binary128
-
-// Special
-let numberInRange: Number({ range: 1...500 }) = 499
-```
-
-### Characters
+#### Characters
 
 ```
 // Char type with backtick delimiters
@@ -242,7 +276,7 @@ let stringValue: String = `Hello, world!`
 let symbolValue: Symbol = @`Symbol`
 ```
 
-### Special cases
+#### Special cases
 
 ```
 let void: Void
@@ -257,7 +291,7 @@ let returnable: Returnable
 let unreturnable: Unreturnable
 ```
 
-### Unexpected behavior
+#### Unexpected behavior
 
 ```
 // Recoverable unexpected behavior
@@ -267,7 +301,29 @@ let exception: Exception
 let error: Error
 ```
 
-## Generic types, traits
+#### Compound Types
+
+- Arrays
+```
+[1, 2, 3]
+```
+
+- Tuples like
+```
+(1, true)
+```
+
+### Literals and operators
+
+Integers 1, floats 1.2, characters 'a', strings "abc", booleans true and the unit type () can be expressed using literals.
+
+Integers can, alternatively, be expressed using hexadecimal, octal or binary notation using these prefixes respectively: 0x, 0o or 0b.
+
+Underscores can be inserted in numeric literals to improve readability, e.g. 1_000 is the same as 1000, and 0.000_001 is the same as 0.000001.
+
+Rust also supports scientific E-notation, e.g. 1e6, 7.6e-4. The associated type is f64.
+
+We need to tell the compiler the type of the literals we use. For now, we'll use the u32 suffix to indicate that the literal is an unsigned 32-bit integer, and the i32 suffix to indicate that it's a signed 32-bit integer.
 
 ```
 let type: Type
@@ -364,8 +420,6 @@ fn do = match {
 do(value)
 ```
 
-```
-
 #### Comparison
 
 | Imperative | Functional |
@@ -435,6 +489,11 @@ import { Part } from `./user`
 
 // Import a part of a file and assign a local alias to it
 import { Part as MyPart } from `./user`
+```
+
+## Generic types, traits
+```
+TBD
 ```
 
 ## Namespaces
