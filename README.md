@@ -492,20 +492,20 @@ assert isUserInvited || isUserCreated || isUserOnboarded  {
 }
 
 // Call a function and return the flow to the block parent
-assert value = 1 {
+assert value == 1 {
     doThis()
     return
 }
 
 // Add an `else` fallback
-assert value = 3 {
+assert value == 3 {
     say`The value is nuts!`
 } else {
     warn`But something doesn't add up`
 }
 
 // Use the expression value locally
-assert value = 3 as Some(v) {
+assert value == 3 as Some(v) {
     say`The value of $v is total nuts!`
 } else {
     warn`But something doesn't add up`
