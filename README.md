@@ -243,6 +243,11 @@ compose Compose (
 
 ### Semantics
 ```
+// Anonymous block
+{
+
+}
+
 // Unique anonymous block
 token {
      // Body
