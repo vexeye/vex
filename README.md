@@ -1,6 +1,6 @@
 # vexx
 
-Vexx, a general purpose, highly opinionated, high performance, universal code language with an emphasis on code literacy, readability, maintainability, consistency and developer experience & ergonomics. All this without sacrificing compilation or runtime speed of the produced applications & libraries.
+Vexx, a general purpose universal code language with an emphasis on code literacy, readability, maintainability, consistency and developer experience. All this while keeping up with top priorities such compilation and runtime performance of the produced applications & libraries. 
 
 ![code](https://github.com/vexeye/vexx/assets/32410574/59d6e8d3-a8f6-4e4d-9a5c-b3e39262dc6f)
 
