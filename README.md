@@ -11,50 +11,49 @@ Vexx, a general purpose, highly opinionated, high performance, universal code la
 
 ## Hello world
 
-```
+```vex
 // main.x
 say`Hello, world!`
 ```
 
 ## Manifesto
-```
+
+```text
 1.
-Documentation is pivotal.
-Readability is absolute.
-Consistency is crucial.
-Testing is unavoidable.
-Benchmarking is vital.
+1.1. Documentation is pivotal.
+1.2. Readability is absolute.
+1.3. Consistency is crucial.
+1.4. Benchmarking is vital.
+1.5. Testing - unavoidable.
 
 2.
-Developer experience over unnecessary struggle.
-Quantity of files over quantity of lines.
-Verticality over horizontality.
-Patterns over randomness.
+2.1. Beautiful is better than ugly.
+2.2. Shorter is better than longer.
+2.3. Sparse is better than dense.
+2.4. Flat is better than nested.
+2.5. Nested is better than mess.
 
 3.
-Beautiful is better than ugly.
-Shorter is better than longer.
-Sparse is better than dense.
-Flat is better than nested.
-Nested is better than mess.
+3.1 Complex is better than complicated.
+3.2 Simple is better than complex.
+3.4 Clear is better than ambiguous.
+3.3 Explicit is better than implicit.
+3.5 Descriptive is better than vague.
 
 4.
-If the implementation is hard to explain, it's a bad idea.
-If the implementation is easy to explain, it may be a good idea.
+4.1. Developer experience over unnecessary struggle.
+4.2. Quantity of files over quantity of lines.
+4.3. Reusability over repetitiveness.
+4.4. Verticality over horizontality.
+4.5. Patterns over randomness.
 
 5.
-Complex is better than complicated.
-Simple is better than complex.
+5.1 In the face of ambiguity, refuse the temptation to guess.
+5.2 Special cases aren't special enough to break the rules.
+5.3 Historical benchmarking over premature optimization.
+5.4 Errors should never be logged superficially.
+5.5 Exceptions should never pass silently.
 
-6.
-Explicit is better than implicit.
-Clarity is better than ambiguity.
-
-7.
-In the face of ambiguity, refuse the temptation to guess.
-Special cases aren't special enough to break the rules.
-Errors should never be logged superficially.
-Exceptions should never pass silently.
 ```
 
 ## Entrypoint priority
@@ -69,13 +68,13 @@ The priority for the entrypoint of an application or library goes as follows:
 
 ## Literal language
 
-Being a highly literal language it is important to have everything tool and building block to the disposal of the developer, enabling the writing of clear, readable and maintainable code. 
+Being a highly literal language it is important to have everything tool and building block to the disposal of the developer, enabling the writing of clear, readable and maintainable code.
 
 ### Comments
 
 #### Inline
 
-```
+```vex
 // This is an inline comment.
 
 // ! This is a highly important inline comment.
@@ -167,6 +166,7 @@ fatal`Service encountered an unrecoverable error: $error. Exiting...`
 ```
 
 ### Tracing, benchmarking and debugging
+
 ```
 dbg(obj)
 trace(obj)
@@ -242,6 +242,7 @@ compose Compose (
 ```
 
 ### Semantics
+
 ```
 // Anonymous block
 {
@@ -326,6 +327,7 @@ let int128Value: I128
 ```
 
 #### Unsigned integer
+
 ```
 let unsignedInt8Value: uI8
 let unsignedInt16Value: uI16
@@ -335,6 +337,7 @@ let unsignedInt128Value: uI128
 ```
 
 #### Floating point
+
 ```
 let int8Value: F16 = 1.0  // 16-bit floating point (10-bit mantissa) IEEE-754-2008 binary16
 let int8Value: F32 = 1.0  // 32-bit floating point (23-bit mantissa) IEEE-754-2008 binary32
@@ -403,11 +406,13 @@ let error: Error
 #### Compound Types
 
 - Arrays
+
 ```
 [1, 2, 3]
 ```
 
 - Tuples like
+
 ```
 (1, true)
 ```
@@ -421,6 +426,7 @@ Literal modifiers are single characters prefixed, suffixed or part of the litera
 Below is a list of literal modifiers.
 
 #### Hexadecimal
+
 ```
 0x
 
@@ -428,12 +434,14 @@ Below is a list of literal modifiers.
 ```
 
 #### Octal
+
 ```
 0o
 
 ```
 
 #### Binary
+
 ```
 0b
 
@@ -441,12 +449,14 @@ Below is a list of literal modifiers.
 ```
 
 #### Scientific E-notation (F64)
+
 ```
 1e6
 7.6e-4
 ```
 
 #### Number blank separator
+
 ```
 100000000 is the same as `10_000_000`
 0.0000001 is the same as 0.000_001
@@ -455,20 +465,25 @@ Below is a list of literal modifiers.
 ### Operators
 
 #### And
+
 ```
 true && true
 ```
 
 #### Or
+
 ```
 true || false
 ```
 
 #### Not
+
 ```
 !true
 ```
+
 #### Range
+
 ```
 1 .. 5
 ```
@@ -521,6 +536,7 @@ assert value == 3 as Some(v) {
 > ℹ️ For complex expressions involving many conditions use `match`
 
 ### Many conditions
+
 ```
 // Match single value against expressions
 match value {
@@ -566,7 +582,6 @@ fn do = match {
 do(value)
 ```
 
-
 ## Generics
 
 ```
@@ -584,7 +599,6 @@ TBD
 Vexx enforces the user to declare & define a single building block entity per file, unless part of a namespace, therefore learning how to import/export building blocks is an important step moving forward.
 
 ### Importing
-
 
 **Installed**
 
@@ -639,6 +653,7 @@ import { Part as MyPart } from `./user`
 ```
 
 ## Generic types, traits
+
 ```
 TBD
 ```
@@ -654,7 +669,7 @@ We can define & concatinate the namespaces as such
 ns User
 ns User:Profile // ❌ Compilation error: Another encapsulating namespace block cannot be defined in the same file.
 
-// Using a single `:` token 
+// Using a single `:` token
 fn User:myFunction() {
     // Implementation
 }
@@ -707,7 +722,7 @@ Then, we create a namespace to group all user related stuff in there.
 
 ```
 // src/users.x
-ns Users 
+ns Users
 
 en Users:UserRoles {
     USER
@@ -729,7 +744,7 @@ fn main() => {
 
 ## Functions
 
-All functions receive only one parameter. 
+All functions receive only one parameter.
 
 This is enforced for various reasons.
 
@@ -768,7 +783,7 @@ Pure functions cannot call other non-pure functions inside it.
 fn example(p: T): ReturnType => {
   let n = getSomethingPure()
   // Do something with n
-  
+
   // Function body
   return ReturnType
 }
@@ -805,12 +820,12 @@ log`$infinite().next()` // 0
 log`$infinite().next()` // 1
 ```
 
-
 ### Asynchronous functions
 
 Async functions return a promise to be delivered, when called, they are not blocking the further execution no matter how long the main thread has to await for the result to come.
 
 #### Continuous async function
+
 ```
 // Declaration & Definition
 fn example(p: T): ReturnType |> {
@@ -844,6 +859,7 @@ await promise.cancel()
 Anonymous lamda functions are short-lived functions that are bound to a callback of another function, and cannot be declared somewhere else.
 
 They can be one of types:
+
 - Syncronous
 - Asynchronous
 
@@ -885,7 +901,7 @@ The `fn` method is an alias for `F` blueprint primitive that is used for all fun
 
 ```
 // Log an empty pure function
-log`$F` 
+log`$F`
 
 // Create and call a pure function, returns void result
 log`$F()`
@@ -1030,6 +1046,7 @@ BlueprintName::method() // 👈 The call to a static method is done via `::`
 ```
 
 > ℹ️ Accessing a static blueprint method encapsulated inside a namespace looks like this:
+>
 > ```
 > Namespace:Blueprint::staticMethod()
 > ```
@@ -1043,6 +1060,7 @@ By design there are 2 ways of looking at access modifiers.
 #### Implicit
 
 All fields and methods are visible to the consumers by default
+
 ```
 bp Parent(&self) {
     fullName: String
