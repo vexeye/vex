@@ -130,7 +130,24 @@ fn doSomething(): T => {
 
 ## Sub-section commentary 2
 
-fn doSomethingNasty(): T => {
+fn doSomethingAwesome(): T => {
+  // Implementation
+}
+```
+
+### Comment Regions
+
+Comment sections are great to vertically split code in meanignfull sections, or "chapters" to list through, however it's not possible to group or encapsulate code in them as all the code behind a section will always be part of it.
+
+To add an encapsulating comment region without adding an extra level of identation:
+
+```vex
+fn doSomething(): T => {
+  /# Converted
+  // Implementation
+  /#
+
+  # Process that thing
   // Implementation
 }
 ```
@@ -149,7 +166,7 @@ TBD
 
 ## Printing, logging & debugging
 
-Vexx has all the functionality to print to the terminal using `7` different log levels for all your needs.
+Vexx has all the functionality to print to the terminal using `7` different log levels for general purpose use.
 
 ### General purpose
 
