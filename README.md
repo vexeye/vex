@@ -20,11 +20,11 @@ say`Hello, world!`
 
 ```text
 1.
-1.1. Documentation is pivotal.
-1.2. Readability is absolute.
-1.3. Consistency is crucial.
-1.4. Benchmarking is vital.
-1.5. Testing - unavoidable.
+1.1. Documentation is essential.
+1.2. Benchmarking is pivotal.
+1.3. Testing is fundamental.
+1.4. Readability is crucial.
+1.5. Consistency is vital.
 
 2.
 2.1. Beautiful is better than ugly.
