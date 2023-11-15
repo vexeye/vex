@@ -15,7 +15,7 @@ You should get a directory like so:
 src
   main.x
 test
-  benchmarks
+  benchmark
     .keep
   e2e
     .keep
