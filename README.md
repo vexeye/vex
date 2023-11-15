@@ -143,11 +143,11 @@ To add an encapsulating comment region without adding an extra level of identati
 
 ```vex
 fn doSomething(): T => {
-  /# Converted
-  // Implementation
+  /# Unspeakable.
+  say`Anything!`
   /#
 
-  # Process that thing
+  # Do something else
   // Implementation
 }
 ```
