@@ -615,58 +615,119 @@ TBD
 
 Vexx enforces the user to declare & define a single building block entity per file, unless part of a namespace, therefore learning how to import/export building blocks is an important step moving forward.
 
-### Importing
+### Using the installed packages
 
-**Installed**
-
+**1. Use standart sources / packages.**
 ```
-// 1. Import all from an installed package
+// Use everything.
+use fmt
 
-// Import the whole package in it's entirety and access the blocks directly
-import `@scope/package`
+// Use everything at path.
+use fmt/deep/internals
 
-// Import the whole package in it's entirety and assign a local alias to it
-import `@scope/package` as LocalAlias
+// Use everything as a local alias.
+use fmt as Alias
 
-// 2. Import partial from an installed package
+// Use only a part.
+use { Part } from fmt
 
-// Import a single part from the whole package
-// ℹ️ The whole package is downloaded & installed, only `Part` is included in the build.
-import { Part } from `@scope/package`
+// Use only a part as a local alias.
+use { Part as Alias } from fmt
 
-// Import a single part from the package and assign a local alias to it
-import { Part as MyPart } from `@scope/package`
+// Use only a subset.
+use fmt:namespace
 
-// 3. Import selective namespace from an installed package
+// Use only a part of a subset.
+use { Part } from fmt:namespace
 
-// Import everything from this namespace
-// ℹ️ Only the namespace is downloaded & installed, everything that is part of the namespace is included in the build.
-import `@scope/package:namespace`
-
-// Import a single part from the package namespace
-// ℹ️ Only the namespace is downloaded & installed, only `Part` of the namespace is included in the build.
-import { Part } from `@scope/package:namespace`
-
-// Import a single part from the package and assign a local alias to it
-import { Part as MyPart } from `@scope/package:namespace`
+// Use only a part of a subset as a local alias.
+use { Part as Alias } from fmt:namespace
 ```
 
-**Local**
-
-The same rules applies to local files
-
+**2. Use internal project sources / packages. (relative)**
 ```
-// Import the whole file in it's entirety and access the blocks directly
-import `./user`
+// Use everything.
+use ./relative
 
-// Import the whole file in it's entirety and assign a local alias to it
-import `./user` as LocalUser
+// Use everything at path.
+use ./relative/deep/path
 
-// Import a part of a file
-import { Part } from `./user`
+// Use everything as a local alias.
+use ./relative as Alias
 
-// Import a part of a file and assign a local alias to it
-import { Part as MyPart } from `./user`
+// Use only a part.
+use { Part } from ./relative
+
+// Use only a part as a local alias.
+use { Part as Alias } from ./relative
+
+// Use only a subset.
+use ./relative:namespace
+
+// Use only a part of a subset.
+use { Part } from ./relative:namespace
+
+// Use only a part of a subset as a local alias.
+use { Part as Alias } from ./relative:namespace
+```
+
+**3. Use internal project sources / packages. (absolute)**
+```
+// Use everything.
+use @/src/local
+
+// Use everything at path.
+use @/src/local/deep/path
+
+// Use everything as a local alias.
+use @/src/local/path as Alias
+
+// Use everything from package manifest.
+use @/package
+
+// Use only a part.
+use { Part } from @/src/local/path
+
+// Use only a part as a local alias.
+use { Part as Alias } from @/src/local/path
+
+// Use only a subset.
+use @/src/local/path:namespace
+
+// Use only a part of a subset.
+use { Part } from @/src/local/path:namespace
+
+// Use only a part of a subset as a local alias.
+use { Part as Alias } from @/src/local/path:namespace
+```
+
+**4. Use external project sources / packages.**
+
+> ℹ️ All non-standart packages are enforced to be scoped
+```
+// Use everything.
+use @scope/package
+
+// Use everything at path.
+use @scope/package/deep/internals
+
+// Use everything as a local alias.
+use @scope/package as Alias
+
+// Use only a part.
+use { Part } from @scope/package
+
+// Use only a part as a local alias.
+use { Part as Alias } from @scope/package
+
+// Use only a subset.
+use @scope/package:namespace
+
+// Use only a part of a subset.
+use { Part } from @scope/package:namespace
+
+// Use only a part of a subset as a local alias.
+use { Part as Alias } from @scope/package:namespace
 ```
 
 ## Generic types, traits
