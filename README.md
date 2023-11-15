@@ -1,13 +1,29 @@
 # vexx
 
-Vexx, a general purpose universal code language with an emphasis on code literacy, readability, maintainability, consistency and developer experience. All this while keeping up with top priorities such compilation and runtime performance of the produced applications & libraries. 
+Vexx, a general purpose universal code language with an emphasis on code literacy, readability, maintainability, consistency and developer experience. All this while keeping up with top priorities such compilation and runtime performance of the produced applications & libraries.
 
 ![code](https://github.com/vexeye/vexx/assets/32410574/59d6e8d3-a8f6-4e4d-9a5c-b3e39262dc6f)
 
 ## Getting started
 
 1. Install `vexx` cli
-2. Run `vexx create app`
+2. Run `xx new app`
+
+You should get a directory like so:
+
+```
+src
+  main.x
+test
+  benchmarks
+    .keep
+  e2e
+    .keep
+  spec
+    .keep
+package.x
+README.md
+```
 
 ## Hello world
 
@@ -53,7 +69,6 @@ say`Hello, world!`
 5.3 Historical benchmarking over premature optimization.
 5.4 Errors should never be logged superficially.
 5.5 Exceptions should never pass silently.
-
 ```
 
 ## Entrypoint priority
@@ -152,7 +167,7 @@ fn doSomething(): T => {
 }
 ```
 
-### Embedded Linter / Prettier
+### Variable monospace fonts
 
 ```
 TBD
@@ -609,6 +624,44 @@ let type: Type
 
 ```
 TBD
+```
+
+## Advanced CLI sub-commands
+
+`vexx` comes with a CLI to do all sorts of things.
+
+### Package management
+
+```bash
+xx i
+xx add <@scope/package>
+xx upd <@scope/package>
+xx rm <@scope/package>
+```
+
+### Software development
+
+**Running & Building**
+```bash
+xx dev
+xx start
+xx build
+```
+
+**Documenting & Testing**
+```bash
+xx docs
+xx bench
+xx test
+```
+
+**Versioning & Distributing**
+```bash
+xx tag
+xx pack
+xx version
+xx publish
+xx release
 ```
 
 ## Packages
