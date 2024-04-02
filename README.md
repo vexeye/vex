@@ -1,12 +1,12 @@
-# vexx
+# vex
 
-Vexx, a general purpose universal code language with an emphasis on code literacy, readability, maintainability, consistency and developer experience. All this while keeping up with top priorities such compilation and runtime performance of the produced applications & libraries.
+vex, a general purpose universal code language with an emphasis on code literacy, readability, maintainability, consistency and developer experience. All this while keeping up with top priorities such compilation and runtime performance of the produced applications & libraries.
 
-![code](https://github.com/vexeye/vexx/assets/32410574/59d6e8d3-a8f6-4e4d-9a5c-b3e39262dc6f)
+![code](https://github.com/vexeye/vex/assets/32410574/59d6e8d3-a8f6-4e4d-9a5c-b3e39262dc6f)
 
 ## Getting started
 
-1. Install `vexx` cli
+1. Install `vex` cli
 2. Run `xx new app`
 
 You should get a directory like so:
@@ -109,14 +109,14 @@ Being a highly literal language it is important to have everything tool and buil
 */
 
 /**
-* This is a multi-line comment with a @vexx/doc decorator.
-* @See https://vexxlang.com
+* This is a multi-line comment with a @vex/doc decorator.
+* @See https://vexlang.com
 */
 
 /**
-* This is a chonky multi-line comment with multiple @vexx/doc decorators.
+* This is a chonky multi-line comment with multiple @vex/doc decorators.
 * @Author Reanimated Man X <mail@rmx.codes> / Alexei Gaidulean
-* @See https://vexxlang.com
+* @See https://vexlang.com
 */
 ```
 
@@ -181,7 +181,7 @@ TBD
 
 ## Printing, logging & debugging
 
-Vexx has all the functionality to print to the terminal using `7` different log levels for general purpose use.
+vex has all the functionality to print to the terminal using `7` different log levels for general purpose use.
 
 ### General purpose
 
@@ -220,11 +220,11 @@ groupEnd`This is a logging group`
 
 ## Foundations
 
-Vexx is structured and build around repetitive, consistent structures called **blocks**.
+vex is structured and build around repetitive, consistent structures called **blocks**.
 
 ### Anatomy
 
-Here is a general overview of Vexx block anatomy.
+Here is a general overview of vex block anatomy.
 
 ```
 // Block
@@ -328,7 +328,7 @@ TBD
 
 ## Primitives
 
-Vexx provides access to a wide variety of primitives.
+vex provides access to a wide variety of primitives.
 
 ### Scalar Types
 
@@ -628,7 +628,7 @@ TBD
 
 ## Advanced CLI sub-commands
 
-`vexx` comes with a CLI to do all sorts of things.
+`vex` comes with a CLI to do all sorts of things.
 
 ### Package management
 
@@ -666,7 +666,7 @@ xx release
 
 ## Packages
 
-Vexx enforces the user to declare & define a single building block entity per file, unless part of a namespace, therefore learning how to import/export building blocks is an important step moving forward.
+vex enforces the user to declare & define a single building block entity per file, unless part of a namespace, therefore learning how to import/export building blocks is an important step moving forward.
 
 ### Using the installed packages
 
@@ -1217,7 +1217,7 @@ bp Parent(&self) {
 
 ### Coupling
 
-In Vexx there are two ways of coupling blueprints.
+In vex there are two ways of coupling blueprints.
 
 - **Strict** via blueprint parent inheritance
 - **Loose** via blueprint dependency composition
