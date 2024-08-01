@@ -35,6 +35,8 @@ say`Hello, world!`
 ## Manifesto
 
 ```text
+0. Performance is indisputable.
+
 1.
 1.1. Documentation is essential.
 1.2. Benchmarking is pivotal.
