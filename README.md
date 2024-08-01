@@ -7,7 +7,7 @@
 ## Getting started
 
 1. Install `vex` cli
-2. Run `xx new app`
+2. Run `vex new app`
 
 You should get a directory like so:
 
