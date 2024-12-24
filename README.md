@@ -684,19 +684,19 @@ use fmt/deep/internals
 use fmt as Alias
 
 // Use only a part.
-use { Part } from fmt
+use fmt:{ Part }
 
 // Use only a part as a local alias.
-use { Part as Alias } from fmt
+use fmt:{ Part as Alias }
 
 // Use only a subset.
 use fmt:namespace
 
 // Use only a part of a subset.
-use { Part } from fmt:namespace
+use fmt:namespace:{ Part } 
 
 // Use only a part of a subset as a local alias.
-use { Part as Alias } from fmt:namespace
+use fmt:namespace:{ Part as Alias } 
 ```
 
 **2. Use internal project sources / packages. (relative)**
@@ -711,19 +711,19 @@ use ./relative/deep/path
 use ./relative as Alias
 
 // Use only a part.
-use { Part } from ./relative
+use ./relative:{ Part } 
 
 // Use only a part as a local alias.
-use { Part as Alias } from ./relative
+use ./relative:{ Part as Alias } 
 
 // Use only a subset.
 use ./relative:namespace
 
 // Use only a part of a subset.
-use { Part } from ./relative:namespace
+use ./relative:namespace:{ Part }
 
 // Use only a part of a subset as a local alias.
-use { Part as Alias } from ./relative:namespace
+use ./relative:namespace:{ Part as Alias } 
 ```
 
 **3. Use internal project sources / packages. (absolute)**
@@ -741,19 +741,19 @@ use @/src/local/path as Alias
 use @/package
 
 // Use only a part.
-use { Part } from @/src/local/path
+use @/src/local/path:{ Part } 
 
 // Use only a part as a local alias.
-use { Part as Alias } from @/src/local/path
+use @/src/local/path:{ Part as Alias }
 
 // Use only a subset.
 use @/src/local/path:namespace
 
 // Use only a part of a subset.
-use { Part } from @/src/local/path:namespace
+use @/src/local/path:namespace:{ Part }
 
 // Use only a part of a subset as a local alias.
-use { Part as Alias } from @/src/local/path:namespace
+use @/src/local/path:namespace:{ Part as Alias }
 ```
 
 **4. Use external project sources / packages.**
@@ -770,19 +770,19 @@ use @scope/package/deep/internals
 use @scope/package as Alias
 
 // Use only a part.
-use { Part } from @scope/package
+use @scope/package:{ Part }
 
 // Use only a part as a local alias.
-use { Part as Alias } from @scope/package
+use @scope/package:{ Part as Alias } 
 
 // Use only a subset.
 use @scope/package:namespace
 
 // Use only a part of a subset.
-use { Part } from @scope/package:namespace
+use @scope/package:namespace:{ Part } 
 
 // Use only a part of a subset as a local alias.
-use { Part as Alias } from @scope/package:namespace
+use @scope/package:namespace:{ Part as Alias } 
 ```
 
 ## Generic types, traits
