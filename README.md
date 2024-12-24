@@ -1206,13 +1206,35 @@ bp Parent(&self) {
 
 Fields and methods are granularly grouped in a vertical manner
 
+```yaml
+// Public
+---
+// Private
+---
+// Protected
+```
+
+If you only need `Public` and `Protected`
+
+```yaml
+// Public
++--
+// Protected
+```
+
+If you only need `Protected`
+
+```yaml
+++-
+// Protected
+```
+
 ```
 bp Parent(&self) {
-# @Visible
     fullName: String
-# @Inherit
+    ---
     bankCredentials: String
-# @Hidden
+    ---
     skeletsInTheCloset: String
 }
 ```
