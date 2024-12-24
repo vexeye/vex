@@ -536,7 +536,7 @@ TBD Bitwise operators
 ```
 // Assert guards
 assert !isReady {
-    return
+    error`You are not prepared.`
 }
 
 // Multiple conditions
