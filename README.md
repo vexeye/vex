@@ -1218,15 +1218,17 @@ If you only need `Public` and `Protected`
 
 ```yaml
 // Public
-+--
+---
+---
 // Protected
 ```
 
 If you only need `Protected`
 
 ```yaml
-++-
-// Protected
+---
+---
+// Protected here, ignore the rest.
 ```
 
 ```
